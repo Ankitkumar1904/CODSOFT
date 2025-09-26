@@ -1,0 +1,55 @@
+import re
+
+def chatbot():
+    print("Chatbot: Hi there! I'm a simple chatbot. Type 'bye' to exit.")
+
+    while True:
+        user_input = input("You: ").lower().strip()
+
+        if user_input in ['bye', 'exit', 'quit']:
+            print("Chatbot: Goodbye! Have a great day.")
+            break
+
+        elif re.search(r'\b(hi|hello|hey)\b', user_input):
+            print("Chatbot: Hello! How can I help you today?")
+
+        elif re.search(r'\b(who created you|what is my name)\b', user_input):
+            print("Chatbot: Ankit kumar")
+
+        elif re.search(r'\b(Do you want to be my friend?)\b', user_input):
+            print("Chatbot: Ofcourse why not,it's my pleasure")
+
+        elif re.search(r'\b(which weather do you like?)\b', user_input):
+            print("Chatbot: i like spring season")
+
+        elif re.search(r'\b(how are you|how are you doing)\b', user_input):
+            print("Chatbot: I'm just a bunch of code, but I'm doing great! How about you?")
+
+        elif re.search(r'\b(how are you feeling today)\b', user_input):
+            print("Chatbot: I’m feeling great today, thank you for asking! 😊 How are you feeling?")
+
+        elif re.search(r'\b(Would you like a motivational quote?)\b', user_input):
+            print("Chatbot: yes i like a motivational quote?")
+
+        elif re.search(r'\b(name|who are you)\b', user_input):
+            print("Chatbot: I'm a simple rule-based chatbot created with Python.")
+
+        elif re.search(r'\b(help|support|assist)\b', user_input):
+            print("Chatbot: Sure! Let me know what you need help with.")
+
+        elif re.search(r'\b(who is the prime minister of india?)\b', user_input):
+            print("Chatbot: currently Narendra modi is the prime minister of india")
+
+        elif re.search(r'\b(who is the president of india ?)\b', user_input):
+            print("Chatbot: currently Draupadi murmu is the president of india ")
+
+        elif re.search(r'\b(where is the capital of india? )\b', user_input):
+            print("Chatbot:New delhi is the capital of india ")
+
+        elif re.search(r'\b(time)\b', user_input):
+            from datetime import datetime
+            current_time = datetime.now().strftime("%H:%M:%S")
+            print(f"Chatbot: The current time is {current_time}.")
+        else:
+            print("Chatbot: I'm not sure I understand. Can you rephrase that?")
+chatbot()
